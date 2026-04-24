@@ -784,10 +784,11 @@ function setStationActive(i) {
 
 function setStationResponse(i, text, streaming = false) {
   const el = document.getElementById('response-' + i);
+  const match_specialHTML = RegExp(/[<>"'&]/g);
   if (streaming) {
-    el.innerHTML = `<span class="response-text">${text}</span><span class="streaming-cursor"></span>`;
+    el.innerHTML = `<span class="response-text">${text.replace(match_specialHTML, '')}</span><span class="streaming-cursor"></span>`;
   } else {
-    el.innerHTML = `<span class="response-text">${text}</span>`;
+    el.innerHTML = `<span class="response-text">${text.replace(match_specialHTML, '')}</span>`;
   }
 }
 

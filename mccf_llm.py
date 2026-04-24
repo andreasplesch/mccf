@@ -472,8 +472,10 @@ class OllamaAdapter(LLMAdapter):
     name = "Ollama (Local)"
     requires_key = False
     default_model = "llama3.2"
+    OLLAMA_HOST = "http://localhost:11434" # "https://urban-disco-gpp76p9j7qh9957-11434.app.github.dev"
+    # OLLAMA_HOST = "https://urban-disco-gpp76p9j7qh9957-11434.app.github.dev"
 
-    def __init__(self, api_key="", model="", host="https://urban-disco-gpp76p9j7qh9957-11434.app.github.dev", **kwargs):
+    def __init__(self, api_key="", model="", host=OLLAMA_HOST, **kwargs):
         super().__init__(api_key, model, **kwargs)
         self.host = host
 
