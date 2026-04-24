@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>MCCF X3D Scene</title>
 <script defer src="https://cdn.jsdelivr.net/npm/x_ite@11.6.6/dist/x_ite.min.js"></script>
+<script src="mccf_globals.js"></script>
 <style>
 body { margin: 0; background: #0a0a0f; font-family: monospace; }
 x3d-canvas { width: 100vw; height: 88vh; display: block; }
@@ -80,7 +81,7 @@ button.active { background: #4af0a8; color: #111; }
 </div>
 
 <script>
-const API = 'http://localhost:5000';
+const API = mccf_globals.API;//'http://localhost:5000';
 const POLL_MS     = 750;
 const HOTHOUSE_MS = 1000;
 const LIGHTING_MS = 2000;

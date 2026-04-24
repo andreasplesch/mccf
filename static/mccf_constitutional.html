@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MCCF Constitutional Navigator</title>
+<script src="mccf_globals.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
@@ -580,7 +581,7 @@ function getWaypointQuestion(wpKey, cultivarName) {
   return wp ? wp.question : null;
 }
 
-let API = 'http://localhost:5000';
+let API = mccf_globals.API;//'http://localhost:5000';
 let selectedCultivar = null;
 let currentStep = -1;
 let arcRunning = false;
@@ -632,6 +633,7 @@ function arcSpeak(text) {
 window.addEventListener('load', () => {
   loadArcVoices();
   renderRoster();
+  document.getElementById('api-url').value=mccf_globals.API;
   setApi(document.getElementById('api-url').value);
 });
 

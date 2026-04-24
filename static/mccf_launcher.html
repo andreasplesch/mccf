@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="mccf_globals.js"></script>
 <title>MCCF — Multi-Channel Coherence Field</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
@@ -394,7 +395,7 @@ footer a:hover { color: var(--warm); }
 </footer>
 
 <script>
-let API = 'http://localhost:5000';
+let API = mccf_globals.API;//'http://localhost:5000';
 
 function setApi(url) { API = url.trim(); checkServer(); }
 
@@ -484,6 +485,7 @@ function setCardStatus(key, live, text) {
 }
 
 window.addEventListener('load', () => {
+  document.querySelector('#api-url').value=API;
   checkServer();
   setInterval(checkServer, 10000);  // check every 10s
 });

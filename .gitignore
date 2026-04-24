@@ -5,6 +5,7 @@ __pycache__/
 .env
 venv/
 env/
+exports/
 
 # API keys — never commit these
 .env
